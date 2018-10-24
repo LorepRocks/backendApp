@@ -30,7 +30,7 @@ exports.searchUser = (connection, callback, cc, password) => {
                     rows[0].firstname,
                     rows[0].lastname,
                     null,
-                    rows[0].profile_id);
+                    rows[0].profileId);
                     console.log('user', user);
                     callback(null, user);
             }else{
