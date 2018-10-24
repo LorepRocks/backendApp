@@ -16,9 +16,12 @@ app.use(bodyParser.urlencoded({
 
 app.use(bodyParser.json());
 app.use(methodOverride());
+app.use(cors());
 
 
 require('./components/user/userRoutes')(app);
+require('./components/teacher/teacherRoutes')(app);
+require('./components/message/messageRoutes')(app);
 
 
 app.listen(port,function(){

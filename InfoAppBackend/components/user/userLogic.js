@@ -23,3 +23,25 @@ exports.createUser = (callback, user) => {
         }
     });
 }
+
+exports.searchUser = (callback, cc, password) => {
+    var errorString = 'Logic Error Search User Fail';
+    pool.getConnection(config.db, (err, connection) => {
+        if(!err){
+            UserDAL.searchUser(connection, (err, user) => {
+                connection.release();
+                if(err){
+                    callback(err, null);
+                }else{
+                    if(user.cc){
+                        callback(null, user);
+                    }else{1
+                        callback(null, 'Error Usuario y/o Contraseña Incorrectos');
+                    }
+                }
+            }, cc, password)
+        }else{
+            callback(errorString + err, null);
+        }
+    });
+}
