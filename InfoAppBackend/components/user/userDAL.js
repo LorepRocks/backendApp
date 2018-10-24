@@ -1,7 +1,7 @@
 'use strict';
 const User = require('./user');
 let createUserQuery = `INSERT INTO Users(CC,firstname,lastname,password,profile_id) VALUES (?,?,?,?,?)`;
-let getUserQuery = `SELECT U.cc, U.firstname, U.lastname, U.profile_id FROM Users U where U.cc = ? and U.password= ?`;
+let getUserQuery = `SELECT U.cc, U.firstname, U.lastname, U.profileId FROM Users U where U.cc = ? and U.password= ?`;
 
 
 exports.createUser = (connection, callback, user) => {
@@ -17,7 +17,7 @@ exports.createUser = (connection, callback, user) => {
     });
 }
 
-exports.searchUser = (connection, callback, cc, password) => {
+exports.searchUser = (connection, callback, cc, password) => {  
     var errorString = "DAL Error searchUser: ";
     console.log('cc', cc);
     console.log('password', password);
