@@ -1,7 +1,7 @@
 'use strict';
 const User = require('./user');
-let createUserQuery = `INSERT INTO users(CC,firstname,lastname,password,profile_id) VALUES (?,?,?,?,?)`;
-let getUserQuery = `SELECT U.cc, U.firstname, U.lastname, U.profile_id FROM users U where U.cc = ? and U.password= ?`;
+let createUserQuery = `INSERT INTO Users(CC,firstname,lastname,password,profile_id) VALUES (?,?,?,?,?)`;
+let getUserQuery = `SELECT U.cc, U.firstname, U.lastname, U.profile_id FROM Users U where U.cc = ? and U.password= ?`;
 
 
 exports.createUser = (connection, callback, user) => {

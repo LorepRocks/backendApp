@@ -5,7 +5,7 @@ const saveMessageQuery = `INSERT INTO messages(content,teacherId,studentId,atten
 const getMessagesforAttendantQuery = `
 select M.id, M.content, M.send_date as sendDate, M.isOpen, S.id as studentId, S.firstname as studentFirstname, S.lastname as studentLastname, T.id as teacherId, 
 U.firstname as teacherFirstname, U.lastname as teacherLastName
-FROM messages M
+FROM Messages M
 inner join Students S on M.studentId = S.id
 inner join Teachers T on M.teacherId = T.cc
 inner join Users U on T.cc = U.cc
