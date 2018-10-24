@@ -12,7 +12,7 @@ inner join Users U on T.cc = U.cc
 inner join Attendant A on M.attendantId = A.id
 where A.cc = ? order by M.send_date desc`;
 
-const updateMessageOpenQuery = `UPDATE messages set isOpen = 1 where id = ?`;
+const updateMessageOpenQuery = `UPDATE Messages set isOpen = 1 where id = ?`;
 
 exports.saveMessage = (connection, callback, message) => {
     const errorString = 'DAL ERROR SAVE MESSAGE FAIL';
