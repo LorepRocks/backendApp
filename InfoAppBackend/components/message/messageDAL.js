@@ -1,7 +1,7 @@
 'use strict';
 
 const Message = require('../message/message');
-const saveMessageQuery = `INSERT INTO messages(content,teacherId,studentId,attendantId) VALUES (?,?,?,?)`;
+const saveMessageQuery = `INSERT INTO Messages(content,teacherId,studentId,attendantId) VALUES (?,?,?,?)`;
 const getMessagesforAttendantQuery = `
 select M.id, M.content, M.send_date as sendDate, M.isOpen, S.id as studentId, S.firstname as studentFirstname, S.lastname as studentLastname, T.id as teacherId, 
 U.firstname as teacherFirstname, U.lastname as teacherLastName
